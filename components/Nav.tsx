@@ -27,10 +27,10 @@ export function Nav() {
 
         <div className="flex gap-2">
           <Select>Genre</Select>
-          <Input />
+          <Input placeholder="  Search" />
         </div>
 
-        <Switch></Switch>
+        <Switch className="" />
       </nav>
     </>
   );

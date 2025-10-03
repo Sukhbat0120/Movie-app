@@ -1,13 +1,13 @@
 import { MovieType } from "@/lib/types";
 import { MovieCard } from "./MovieCard";
 import { Movies } from "@/lib/constant";
-export const SectionMovies = (props: { movie: MovieType }) => {
-  const { movie } = props;
+import { Button } from "./ui/button";
+export const SectionMovies = () => {
   return (
-    <div>
-      <div className="flex justify-between">
-        <h1>Upcoming</h1>
-        <button>
+    <div className="w-full flex flex-col w-full gap-6 p-4">
+      <div className="flex justify-between max-w-[1240px]">
+        <Button className="font-bold text-2xl ">Upcoming</Button>
+        <button className="flex items-center gap-1">
           See more{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -19,15 +19,17 @@ export const SectionMovies = (props: { movie: MovieType }) => {
             <path
               d="M3.33301 8.00004H12.6663M12.6663 8.00004L7.99967 3.33337M12.6663 8.00004L7.99967 12.6667"
               stroke="#18181B"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </button>
       </div>
-      {Movies.map((movie, index) => (
-        <MovieCard movie={movie} key={index}></MovieCard>
-      ))}
+      <div className="flex w-full flex-wrap gap-6 p-4">
+        {Movies.map((movie, index) => (
+          <MovieCard movie={movie} key={index}></MovieCard>
+        ))}
+      </div>
     </div>
   );
 };

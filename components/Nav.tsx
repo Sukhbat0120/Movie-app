@@ -42,7 +42,8 @@ export function Nav() {
             <SelectContent>
               <SelectItem value="light">Comedy</SelectItem>
               <SelectItem value="dark">Horror</SelectItem>
-              <SelectItem value="system">Actiion</SelectItem>
+              <SelectItem value="system">Action</SelectItem>
+              <SelectItem value="animation">Animation</SelectItem>
             </SelectContent>
           </Select>
           <Input placeholder="  Search" />

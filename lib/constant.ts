@@ -41,4 +41,14 @@ export const Movies: MovieType[] = [
     name: "Dear Santa",
     rating: 6.9,
   },
+  {
+    image: "/dearsanta.jpg",
+    name: "Dear Santa",
+    rating: 6.9,
+  },
+  {
+    image: "/dearsanta.jpg",
+    name: "Dear Santa",
+    rating: 6.9,
+  },
 ];

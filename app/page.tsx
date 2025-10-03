@@ -16,7 +16,7 @@ import { Movies } from "@/lib/constant";
 import { SectionMovies } from "@/components/SectionMovies";
 export default function Home() {
   return (
-    <div className="w-[1440px] max-w-[1440px] flex flex-col gap-4">
+    <div className="w-[1440px] max-w-[1440px] flex flex-col gap-1">
       <Nav></Nav>
 
       <Carousel className="w-full flex flex-center items-center ">
@@ -31,9 +31,7 @@ export default function Home() {
         <CarouselNext className="absolute right-[200px] top-[400px]" />
       </Carousel>
 
-      <div className="flex flex-wrap gap-6 p-4">
-        <SectionMovies></SectionMovies>
-      </div>
+      <SectionMovies></SectionMovies>
     </div>
   );
 }

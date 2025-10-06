@@ -1,17 +1,17 @@
 import { MovieType } from "@/lib/types";
-import { Movies } from "@/lib/constant";
+
 import Image from "next/image";
 
 export const MovieCard = (props: { movie: MovieType }) => {
   const { movie } = props;
   return (
     <div className="h-[439px] w-[230px] flex flex-col align-start rounded-lg ">
-      <Image
-        src={movie.image}
-        alt={movie.name}
+      <img
+        src={movie.poster_path}
+        alt={movie.poster_path}
         width={230}
         height={340}
-      ></Image>
+      />
       <div className="bg-gray-100 w-full h-full p-4">
         {" "}
         <div className="flex items-center">
@@ -30,10 +30,10 @@ export const MovieCard = (props: { movie: MovieType }) => {
               strokeLinejoin="round"
             />
           </svg>
-          {movie.rating}
-          <p className="text-gray-400">/10</p>
+          {movie.vote_average.toFixed(1)}
+          <p className="text-base text-gray-400">/10</p>
         </div>
-        <h2>{movie.name}</h2>
+        <h2 className="font-semibold text-xl">{movie.title}</h2>
       </div>
     </div>
   );

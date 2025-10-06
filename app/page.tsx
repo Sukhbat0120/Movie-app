@@ -1,5 +1,3 @@
-"use client";
-import { Children, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Nav } from "@/components/Nav";
@@ -11,10 +9,29 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { MovieCard } from "@/components/MovieCard";
-import { Movies } from "@/lib/constant";
 
 import { SectionMovies } from "@/components/SectionMovies";
-export default function Home() {
+import axios from "axios";
+import { MovieType } from "@/lib/types";
+import { title } from "process";
+export default async function Home() {
+  const getUpcomingmovies = async () => {
+    const response = await axios.get(
+      "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1",
+      {
+        headers: {
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNThjOWM4OTljYjRkZmZiY2E3ODlmNTViN2Y3NjRiYyIsIm5iZiI6MTc1OTQ2NDkxNC42MjIwMDAyLCJzdWIiOiI2OGRmNGRkMmNhM2YyNjJlZDYyZTQ0YTYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.ApZzwMGNdT3eqntF7WlOmwjdTtuqDLoiX7Z55PPwIYQ`,
+        },
+      }
+    );
+    return response.data.results.map((movie: MovieType) => ({
+      title: movie.title,
+      vote_average: movie.vote_average,
+      poster_path: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+    }));
+  };
+  const moviesResults = await getUpcomingmovies();
+
   return (
     <div className="w-[1440px] max-w-[1440px] flex flex-col gap-1">
       <Nav></Nav>
@@ -31,7 +48,7 @@ export default function Home() {
         <CarouselNext className="absolute right-[200px] top-[400px]" />
       </Carousel>
 
-      <SectionMovies></SectionMovies>
+      <SectionMovies movies={moviesResults}></SectionMovies>
     </div>
   );
 }

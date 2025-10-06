@@ -1,8 +1,9 @@
 import { MovieType } from "@/lib/types";
 import { MovieCard } from "./MovieCard";
-import { Movies } from "@/lib/constant";
+
 import { Button } from "./ui/button";
-export const SectionMovies = () => {
+export const SectionMovies = (props: { movies: MovieType[] }) => {
+  const { movies } = props;
   return (
     <div className="w-full flex flex-col w-full gap-6 p-4">
       <div className="flex justify-between max-w-[1240px]">
@@ -26,7 +27,7 @@ export const SectionMovies = () => {
         </button>
       </div>
       <div className="flex w-full flex-wrap gap-6 p-4">
-        {Movies.map((movie, index) => (
+        {movies.map((movie, index) => (
           <MovieCard movie={movie} key={index}></MovieCard>
         ))}
       </div>

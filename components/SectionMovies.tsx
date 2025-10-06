@@ -6,7 +6,7 @@ export const SectionMovies = () => {
   return (
     <div className="w-full flex flex-col w-full gap-6 p-4">
       <div className="flex justify-between max-w-[1240px]">
-        <Button className="font-bold text-2xl ">Upcoming</Button>
+        <button className="font-bold text-2xl ">Upcoming</button>
         <button className="flex items-center gap-1">
           See more{" "}
           <svg

@@ -33,7 +33,7 @@ export const MovieCard = (props: { movie: MovieType }) => {
           {movie.vote_average.toFixed(1)}
           <p className="text-base text-gray-400">/10</p>
         </div>
-        <h2 className="font-semibold text-xl">{movie.title}</h2>
+        <h2 className="font-semibold text-lg">{movie.title}</h2>
       </div>
     </div>
   );

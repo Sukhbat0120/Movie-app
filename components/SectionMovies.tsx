@@ -2,12 +2,15 @@ import { MovieType } from "@/lib/types";
 import { MovieCard } from "./MovieCard";
 
 import { Button } from "./ui/button";
-export const SectionMovies = (props: { movies: MovieType[] }) => {
-  const { movies } = props;
+export const SectionMovies = (props: {
+  movies: MovieType[];
+  movieTitle: string;
+}) => {
+  const { movies, movieTitle } = props;
   return (
     <div className="w-full flex flex-col w-full gap-6 p-4">
       <div className="flex justify-between max-w-[1240px]">
-        <button className="font-bold text-2xl ">Upcoming</button>
+        <button className="font-bold text-2xl ">{movieTitle}</button>
         <button className="flex items-center gap-1">
           See more{" "}
           <svg

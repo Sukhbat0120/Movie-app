@@ -1,5 +1,6 @@
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
+import Image from "next/image";
 export default function Home() {
   return (
     <div className="w-100%">
@@ -9,25 +10,25 @@ export default function Home() {
         <p>movie rating </p>
       </div>
       <div className="flex">
-        <img src="" alt="" />
+        <Image src="" alt="" />
         <video src=""></video>
       </div>
       <div>
-        <div></div>
-        <p></p>
+        <div>genre</div>
+        <p>movie descrption</p>
         <div>
-          <p></p>
-          <p></p>
+          <p>Director</p>
+          <p>name</p>
         </div>
         <div>
-          <p></p>
-          <p></p>
+          <p>writters</p>
+          <p>name</p>
         </div>
         <div>
-          <p></p>
-          <p></p>
+          <p>Star</p>
+          <p>name</p>
         </div>
-        <div></div>
+        <div>more like this </div>
         <Footer />
       </div>
     </div>

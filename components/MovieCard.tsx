@@ -5,7 +5,7 @@ import Image from "next/image";
 export const MovieCard = (props: { movie: MovieType }) => {
   const { movie } = props;
   return (
-    <div className="h-[439px] w-[230px] flex flex-col align-start rounded-lg ">
+    <div className="h-[439px] w-[230px] overflow-hidden flex flex-col align-start rounded-lg ">
       <img
         src={movie.poster_path}
         alt={movie.poster_path}
@@ -33,7 +33,7 @@ export const MovieCard = (props: { movie: MovieType }) => {
           {movie.vote_average.toFixed(1)}
           <p className="text-base text-gray-400">/10</p>
         </div>
-        <h2 className="font-semibold text-lg">{movie.title}</h2>
+        <h2 className="font-semibold text-base">{movie.title}</h2>
       </div>
     </div>
   );

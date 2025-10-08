@@ -9,20 +9,16 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { MovieCard } from "@/components/MovieCard";
-
+import { Footer } from "@/components/Footer";
 import { SectionMovies } from "@/components/SectionMovies";
 import axios from "axios";
 import { MovieType } from "@/lib/types";
 import { title } from "process";
+import { axiosInstance } from "@/lib/utils";
 export default async function Home() {
   const getMovies = async (category: string) => {
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${category}?language=en-US&page=1`,
-      {
-        headers: {
-          Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNThjOWM4OTljYjRkZmZiY2E3ODlmNTViN2Y3NjRiYyIsIm5iZiI6MTc1OTQ2NDkxNC42MjIwMDAyLCJzdWIiOiI2OGRmNGRkMmNhM2YyNjJlZDYyZTQ0YTYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.ApZzwMGNdT3eqntF7WlOmwjdTtuqDLoiX7Z55PPwIYQ`,
-        },
-      }
+    const response = await axiosInstance(
+      `/movie/${category}?language=en-US&page=1`
     );
     return response.data.results.map((movie: MovieType) => ({
       title: movie.title,
@@ -62,6 +58,7 @@ export default async function Home() {
         movies={topRatedMovies}
         movieTitle={"Top Rated"}
       ></SectionMovies>
+      <Footer />
     </div>
   );
 }

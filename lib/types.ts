@@ -1,9 +1,7 @@
 export type MovieType = {
-  //adult:
-  // backdrop_path: "/rPSJAElGxOTko1zK6uIlYnTMFxN.jpg",
-  // genre_ids: [
-  //   80
-  // ],
+  //adult: boolean;
+  // backdrop_path: string;
+  // genre_ids: array;
   //id: Number;
   //original_language: string;
   //original_title: string;

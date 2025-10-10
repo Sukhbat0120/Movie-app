@@ -15,6 +15,7 @@ import axios from "axios";
 import { MovieType } from "@/lib/types";
 import { title } from "process";
 import { axiosInstance } from "@/lib/utils";
+
 export default async function Home() {
   const getMovies = async (category: string) => {
     const response = await axiosInstance(
@@ -26,6 +27,7 @@ export default async function Home() {
       poster_path: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
     }));
   };
+
   const upcomingMovies = await getMovies("upcoming");
   const popularMovies = await getMovies("popular");
   const topRatedMovies = await getMovies("top_rated");
@@ -33,7 +35,6 @@ export default async function Home() {
   return (
     <div className="w-[1440px] max-w-[1440px] flex flex-col gap-1">
       <Nav></Nav>
-
       <Carousel className="w-full flex flex-center items-center ">
         <CarouselContent className="w-full">
           {Array.from({ length: 3 }).map((_, index) => (

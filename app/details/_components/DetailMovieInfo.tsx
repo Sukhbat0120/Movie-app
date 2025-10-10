@@ -3,13 +3,13 @@ export const DetailMovieInfo = () => {
     <div>
       {" "}
       <div>genre</div>
-      <p>movie descrption</p>
+      <p>movie </p>
       <div>
         <p>Director</p>
         <p>name</p>
       </div>
       <div>
-        <p>writters</p>
+        <p>w</p>
         <p>name</p>
       </div>
       <div>

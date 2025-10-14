@@ -1,10 +1,7 @@
 import { MovieType } from "@/lib/types";
 
-type Props = {
-  movie: MovieType;
-};
-
-export const DetailMovieHeader = ({ movie }: Props) => {
+export const DetailMovieHeader = (props: { movie: MovieType }) => {
+  const { movie } = props;
   return (
     <div>
       <h1 className="text-2xl font-bold">{movie.title}</h1>

@@ -2,7 +2,7 @@ export type MovieType = {
   //adult: boolean;
   // backdrop_path: string;
   // genre_ids: array;
-  id: Number;
+  id: string;
   //original_language: string;
   //original_title: string;
   //overview: string;
@@ -14,3 +14,4 @@ export type MovieType = {
   vote_average: number;
   //vote_count: Number;
 };
+//"1257009"

@@ -1,9 +1,13 @@
+import { MovieType } from "@/lib/types";
 import Image from "next/image";
-export const DetailMovieSection = () => {
+import React from "react";
+import ReactPlayer from "react-player";
+export const DetailMovieSection = (props: { movie: MovieType }) => {
+  const { movie } = props;
   return (
     <div className="flex">
-      <Image src="" alt="" />
-      <video src=""></video>
+      <Image src={movie.poster_path} alt={movie.poster_path} />
+      <ReactPlayer src="" />
     </div>
   );
 };

@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Nav } from "@/components/Nav";
 import {
   Carousel,
@@ -8,12 +6,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { MovieCard } from "@/components/MovieCard";
+
 import { Footer } from "@/components/Footer";
 import { SectionMovies } from "@/components/SectionMovies";
-import axios from "axios";
+
 import { MovieType } from "@/lib/types";
-import { title } from "process";
 import { axiosInstance } from "@/lib/utils";
 
 export default async function Home() {
@@ -23,6 +20,7 @@ export default async function Home() {
     );
     return response.data.results.map((movie: MovieType) => ({
       title: movie.title,
+      id: movie.id,
       vote_average: movie.vote_average,
       poster_path: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
     }));

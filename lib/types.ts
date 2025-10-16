@@ -1,17 +1,19 @@
+import { ReactNode } from "react";
+
 export type MovieType = {
-  //adult: boolean;
-  // backdrop_path: string;
-  // genre_ids: array;
+  adult: boolean;
+  backdrop_path: string;
+  genre_ids: [];
   id: string;
-  //original_language: string;
-  //original_title: string;
-  //overview: string;
-  //popularity: Number;
+  original_language: string;
+  original_title: string;
+  overview: string;
+  popularity: ReactNode;
   poster_path: string;
-  //release_date: string;
+  release_date: string;
   title: string;
-  // video: boolean,
+  video: string;
   vote_average: number;
-  //vote_count: Number;
+  vote_count: Number;
 };
 //"1257009"

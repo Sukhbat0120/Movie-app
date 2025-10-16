@@ -30,8 +30,8 @@ export const SectionMovies = (props: {
         </button>
       </div>
       <div className="flex w-full flex-wrap gap-6 p-4">
-        {movies.map((movie, index) => (
-          <MovieCard movie={movie} key={index}></MovieCard>
+        {movies.map((movie) => (
+          <MovieCard movie={movie} key={movie.id}></MovieCard>
         ))}
       </div>
     </div>

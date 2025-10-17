@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 export type MovieType = {
   adult: boolean;
   backdrop_path: string;
-  genre_ids: [];
+  genre_ids: number[];
   id: string;
   original_language: string;
   original_title: string;

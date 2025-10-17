@@ -36,8 +36,9 @@ const DetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
           width={290}
           height={428}
         />
+
         <ReactPlayer
-          src={`/movie/${id}/videos?language=en-US${video}`}
+          src={`https://www.youtube.com/watch?v=CHSnz0bCaUk&embeds_referring_euri=http%3A%2F%2Flocalhost%3A3000%2F&source_ve_path=MA${video}`}
           width={760}
           height={428}
           className="bg-gray-300"

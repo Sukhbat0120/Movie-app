@@ -1,6 +1,6 @@
 import { MovieType } from "@/lib/types";
 import { MovieCard } from "./MovieCard";
-
+import Link from "next/link";
 import { Button } from "./ui/button";
 export const SectionMovies = (props: {
   movies: MovieType[];
@@ -11,7 +11,7 @@ export const SectionMovies = (props: {
     <div className="w-full flex flex-col w-full gap-6 p-4">
       <div className="flex justify-between max-w-[1240px]">
         <button className="font-bold text-2xl ">{movieTitle}</button>
-        <button className="flex items-center gap-1">
+        <Link href={movieTitle} className="flex items-center gap-1">
           See more{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@ export const SectionMovies = (props: {
               strokeLinejoin="round"
             />
           </svg>
-        </button>
+        </Link>
       </div>
       <div className="flex w-full flex-wrap gap-6 p-4">
         {movies.map((movie) => (

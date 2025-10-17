@@ -1,24 +1,18 @@
 import { Nav } from "@/components/Nav";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 
 import { Footer } from "@/components/Footer";
 import { SectionMovies } from "@/components/SectionMovies";
 
 import { MovieType } from "@/lib/types";
 import { axiosInstance } from "@/lib/utils";
+import { CarouselSection } from "@/components/Carousel";
 
 export default async function Home() {
   const getMovies = async (category: string) => {
     const response = await axiosInstance(
       `/movie/${category}?language=en-US&page=1`
     );
-    return response.data.results.map((movie: MovieType) => ({
+    return response.data.results.slice(0, 10).map((movie: MovieType) => ({
       title: movie.title,
       id: movie.id,
       vote_average: movie.vote_average,
@@ -33,18 +27,7 @@ export default async function Home() {
   return (
     <div className="w-[1440px] max-w-[1440px] flex flex-col gap-1">
       <Nav></Nav>
-      <Carousel className="w-full flex flex-center items-center ">
-        <CarouselContent className="w-full">
-          {Array.from({ length: 3 }).map((_, index) => (
-            <CarouselItem key={index} className="w-full">
-              <img src="/wickedHome.jpg" alt="" />
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious className="absolute left-[50px] top-[400px]" />
-        <CarouselNext className="absolute right-[200px] top-[400px]" />
-      </Carousel>
-
+      <CarouselSection />
       <SectionMovies
         movies={upcomingMovies}
         movieTitle={"Upcoming"}
